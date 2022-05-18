@@ -1,0 +1,61 @@
+/*
+Table of Contents: 
+0. Global: Spacing & Layout
+1. Global: Colours
+2. Global: Text
+3. Global: Interactive Elements
+4. Global: Primary Navigation
+5. Global: Footer
+6. Page: Home
+7. Page: Work
+8. Page: About
+9. Page: Contact
+*/
+
+/* 
+=====================================
+0. GLOBAL SPACINGS AND LAYOUT
+=====================================
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+      margin: 0;
+}
+
+/* 
+=====================================
+1. Global: Colours
+=====================================
+*/
+
+  body{
+    /* color */
+    background-color: #b4c4fa;
+    color:#484a51;
+  }
+
+/* 
+=====================================
+4. Global: Primary Navigation
+=====================================
+*/
+
+.page-header{ 
+    display: flex;
+    width: 100%;
+    background-color: #e8be02e5
+}
+.main-nav{
+    flex: 0 1 200px;
+}
+.main-nav__list--item:last-child{
+    text-align: right;
+    flex-grow: 1;
+}
+.main-nav__list{
+    list-style-type: none;
+}
