@@ -10,7 +10,7 @@ let pokemonList = [
 // Be aware of the ; - where to add them and wehre not
 // Set the loop parantheses to the end when adding conditinal sentences to a loop.
 for (let i=0; i<pokemonList.length; i++){
-    document.write(pokemonList[i].name +` `+`height is `+ pokemonList[i].height +` cm!`); 
+    document.write(pokemonList[i].name +` `+`height is `+ pokemonList[i].height +` m!`); 
 
     if(pokemonList[i].height >= 1.7) {
         document.write(`     - I\`m size L. Wow, that\`s big!`+ `<br>`);
