@@ -19,7 +19,7 @@ let pokemonRepository = (function(){
 
 
 
-
+/*
 (function(){
 let pokemonList = [
     {name: "Bulbasur", height: 1.7, types: ["grass", "poison", "flying", "electric"]},
@@ -29,9 +29,10 @@ let pokemonList = [
     {name: "Starmie", height: 1.1, types: ["dragon", "ghost", "bug", "fire", "ice"]}
 ]
 })();
+*/
 
 // adapt/conect always the function parameter and not the array name
-pokemonList.forEach(function(pokemon){
+pokemonRepository.forEach(function(pokemon){
     document.write(pokemon.name +" "+"height is "+ pokemon.height +" m!"); 
 
     if(pokemon.height >= 1.7) {
