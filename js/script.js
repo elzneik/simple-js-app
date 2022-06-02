@@ -1,11 +1,17 @@
 let pokemonRepository = (function(){
-    let pokemonList = [];
+    let pokemonList = [
+        {name: "Bulbasur", height: 1.7, types: ["grass", "poison", "flying", "electric"]},
+        {name: "Jigglypuff", height: 0.5, types: ["steel", "poison"]},
+        {name: "Pikachu", height: 0.4, types: ["ground", "flying", "steel"]},
+        {name: "Victreebel", height: 0.7, types: ["psychic", "fire", "ice", "fairy"]},
+        {name: "Starmie", height: 1.1, types: ["dragon", "ghost", "bug", "fire", "ice"]}
+    ];
 
     function add(pokemon){
-        pokemonRepository.add(pokemon);
+        pokemonList(pokemon);
     }
     function getAll(){
-        return pokemonRepository.getAll(pokemonList);
+        return pokemonList;
     }
     return {
         add,
@@ -13,18 +19,8 @@ let pokemonRepository = (function(){
     }
 })();
 
-(function(){
-let pokemonList = [
-    {name: "Bulbasur", height: 1.7, types: ["grass", "poison", "flying", "electric"]},
-    {name: "Jigglypuff", height: 0.5, types: ["steel", "poison"]},
-    {name: "Pikachu", height: 0.4, types: ["ground", "flying", "steel"]},
-    {name: "Victreebel", height: 0.7, types: ["psychic", "fire", "ice", "fairy"]},
-    {name: "Starmie", height: 1.1, types: ["dragon", "ghost", "bug", "fire", "ice"]}
-]
-})();
-
 // adapt/conect always the function parameter and not the array name
-pokemonRepository.forEach(function(pokemon){
+pokemonRepository.getAll().forEach(function(pokemon){
     document.write(pokemon.name +" "+"height is "+ pokemon.height +" m!"); 
 
     if(pokemon.height >= 1.7) {
