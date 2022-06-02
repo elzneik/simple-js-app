@@ -1,3 +1,25 @@
+let pokemonRepository = (function(){
+    let pokemonList = [];
+
+    function add(pokemon){
+        pokemonRepository.add(pokemon);
+    }
+    function getAll(){
+        return pokemonRepository.getAll(pokemonList);
+    }
+    return {
+        add: add,
+        getAll: getAll
+    }
+})();
+
+
+
+
+
+
+
+
 (function(){
 let pokemonList = [
     {name: "Bulbasur", height: 1.7, types: ["grass", "poison", "flying", "electric"]},
@@ -5,7 +27,8 @@ let pokemonList = [
     {name: "Pikachu", height: 0.4, types: ["ground", "flying", "steel"]},
     {name: "Victreebel", height: 0.7, types: ["psychic", "fire", "ice", "fairy"]},
     {name: "Starmie", height: 1.1, types: ["dragon", "ghost", "bug", "fire", "ice"]}
-]})();
+]
+})();
 
 // adapt/conect always the function parameter and not the array name
 pokemonList.forEach(function(pokemon){
