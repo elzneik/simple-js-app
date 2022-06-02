@@ -13,13 +13,6 @@ let pokemonRepository = (function(){
     }
 })();
 
-
-
-
-
-
-
-/*
 (function(){
 let pokemonList = [
     {name: "Bulbasur", height: 1.7, types: ["grass", "poison", "flying", "electric"]},
@@ -29,7 +22,6 @@ let pokemonList = [
     {name: "Starmie", height: 1.1, types: ["dragon", "ghost", "bug", "fire", "ice"]}
 ]
 })();
-*/
 
 // adapt/conect always the function parameter and not the array name
 pokemonRepository.forEach(function(pokemon){
