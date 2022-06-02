@@ -8,8 +8,8 @@ let pokemonRepository = (function(){
         return pokemonRepository.getAll(pokemonList);
     }
     return {
-        add: add,
-        getAll: getAll
+        add,
+        getAll
     }
 })();
 
