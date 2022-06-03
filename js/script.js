@@ -1,3 +1,6 @@
+
+
+
 /*
 // Bonus Task: Filter
 const filterList = pokemonRepository;
@@ -5,10 +8,7 @@ const result = filterList.filter(pokemonList.name);
 console.log(result);
 */
 
-// wrap an IIEF methodology into a variable
-// the function expression holds an array, add function and getAll function
-// add function adds up information, so no return assigned 
-// add function used to specify data types added up parameter typeof was assigned 
+// --- 1 --- Create a function expression
 let pokemonRepository = (function(){
     let pokemonList = [
         {name: "Bulbasur", height: 1.7, types: ["grass", "poison", "flying", "electric"]},
@@ -17,8 +17,8 @@ let pokemonRepository = (function(){
         {name: "Victreebel", height: 0.7, types: ["psychic", "fire", "ice", "fairy"]},
         {name: "Starmie", height: 1.1, types: ["dragon", "ghost", "bug", "fire", "ice"]}
         ];
-        
-// Add function led add all data types. Precent it with typeof parameter and conditionals
+
+// --- 2 --- Function add and getAll
     function add(pokemon){
         if  (
             typeof pokemon === "object" && 
@@ -32,6 +32,13 @@ let pokemonRepository = (function(){
             console.log("pokemon not found");
             }
     }
+
+// --- 3 --- Object.key to check typeof parameter
+    Object.keys(pokemonList).forEach(function(pokemon){
+        console.log(pokemonList[pokemon]);
+    });
+
+// --- 2 --- Function add and getAll
     function getAll(){
         return pokemonList;
     }
@@ -63,4 +70,22 @@ pokemonRepository.getAll().forEach(function(pokemon){
 
 
 });
+
+
+// Overview
+// --- 1 --- Create a function expression
+    // wrap an IIEF methodology into a variable
+    // the function expression holds an array, add function and getAll function
+    // add function adds up information, so no return assigned 
+// --- 2 --- Function add and getAll
+    // Add function led add all data types. Precent it with typeof parameter and conditionals
+    // add function used to specify data types added up parameter typeof was assigned 
+// --- 3 --- Object.key to check typeof parameter
+
+
+
+
+
+
+
 
