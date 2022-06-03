@@ -23,12 +23,12 @@ let pokemonRepository = (function(){
     }
     return {
         add,
-        getAll;
+        getAll,
         addListItem
     }
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon){
-    addListItem(pokemon);
+    pokemonRepository.addListItem(pokemon);
 });
 
