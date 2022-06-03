@@ -23,14 +23,6 @@ let pokemonRepository = (function(){
 
 // adapt/conect always the function parameter and not the array name
 pokemonRepository.getAll().forEach(function(pokemon){
-    document.write(pokemon.name +" "+"height is "+ pokemon.height +" m!"); 
-
-    if(pokemon.height >= 1.7) {
-        document.write("     - I\`m size L. Wow, that\`s big!"+ "<br>");
-    } else if(pokemon.height >=0.5 && pokemon.height <=1.1) {
-        document.write("     - I\`m size M. "+ "<br>");
-    } else {
-        document.write("     - I\`m size S. " + "<br>");
-    }
+    let element = document.querySelector("pokemon-list");
 });
 
