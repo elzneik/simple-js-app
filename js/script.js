@@ -1,14 +1,14 @@
 
 
 
-// note: The overview information is at the bottom
+// note: The ===== overview ===== information is at the bottom
 
 
 // --- 5 --- Filter function
 function filterItems(pokemonList, query){
     return pokemonList.filter(function(el){
         return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
-    })
+    });
 }
 
 // --- 1 --- Create a function expression
@@ -49,21 +49,40 @@ let pokemonRepository = (function(){
         add,
         getAll
     }
+
+// --- 6 --- DOM Manipulation
+    function addListItem(pokemon){
+        let pokemonList  = document.querySelectorAll(".pokemon-list");
+        let pokemonListItem = document.createElement("li");
+// ??? Question: Is that right, adding the addEventListener to the variable ???
+        let button = document.createElement ("button", "addEventListener");
+        button.innerText = pokemon.name;
+        button.classList.add("buttonstyle");
+        pokemonItem.appendChild(button);
+        pokemonListItem.appendChild(pokemonItem);
+        addEvent(button, pokemon);
+    });   
+    
+// --- 8 --- Stand alone function EventListener
+// ??? Question: Why is the parameter pokemon not bold and highlighted???
+    function addEvent(button, pokemon){
+        button.addEventListener("click", function(pokemon){
+            console.log(pokemonRepository.showDetails);
+    });
+
+// --- 7 --- Show Details
+    function showDetails(pokemon){
+        console.log(pokemon)
+    }
 })();
 
 // --- 4 --- forEach
-pokemonRepository.getAll().forEach(function(pokemon){
-    let pokemonList  = document.querySelectorAll(".pokemon-list");
-    let pokemonListItem = document.createElement("li");
-    let button = document.createElement ("button");
-    button.innerText = pokemon.name;
-    button.classList.add("buttonstyle");
-    button.appendChild(pokemonList);
-    button.appendChild(pokemonListItem);    
+pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
 });
 
 
-// Overview
+// ===== Overview =====
 // --- 1 --- Create a function expression
     // wrap an IIEF methodology into a variable
     // the function expression holds an array, add function and getAll function
@@ -78,6 +97,11 @@ pokemonRepository.getAll().forEach(function(pokemon){
 // --- 5 --- Filter function
     // is a public function
     // allows to find specific pokemon
+// --- 6 --- DOM Manipulation
+// --- 7 --- Show Details
+// --- 8 --- Stand alone function EventListener
+
+
 
 
 
