@@ -21,8 +21,10 @@ let pokemonRepository = (function(){
 
 
 
-// adapt/conect always the function parameter and not the array name
 pokemonRepository.getAll().forEach(function(pokemon){
     let element = document.querySelector("pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+
 });
 
