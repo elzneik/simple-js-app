@@ -1,8 +1,10 @@
 
 
 
+// note: The overview information is at the bottom
+
 /*
-// Bonus Task: Filter
+// --- 5 --- Filter function
 const filterList = pokemonRepository;
 const result = filterList.filter(pokemonList.name);
 console.log(result);
@@ -33,7 +35,7 @@ let pokemonRepository = (function(){
             }
     }
 
-// --- 3 --- Object.key to check typeof parameter
+// --- 3 --- Object Keys
     Object.keys(pokemonList).forEach(function(pokemon){
         console.log(pokemonList[pokemon]);
     });
@@ -48,27 +50,14 @@ let pokemonRepository = (function(){
     }
 })();
 
-// adapt/conect always the function parameter and not the array name
+// --- 4 --- forEach
 pokemonRepository.getAll().forEach(function(pokemon){
-    //document.write(pokemon.name +" "+"height is "+ pokemon.height +" m!"); 
-/*
-    if(pokemon.height >= 1.7) {
-        //document.write("     - I\`m size L. Wow, that\`s big!"+ "<br>");
-    } else if(pokemon.height >=0.5 && pokemon.height <=1.1) {
-        //document.write("     - I\`m size M. "+ "<br>");
-    } else {
-        //document.write("     - I\`m size S. " + "<br>");
-    }
-*/
-
     let DomManipulatingPractise = document.querySelectorAll(".pokemon-list");
 
     let listItem = document.createElement("li");
     let button = document.createElement ("button");
     button.innerText = " ";
     //listItem.appendChild(button);
-
-
 });
 
 
@@ -80,7 +69,15 @@ pokemonRepository.getAll().forEach(function(pokemon){
 // --- 2 --- Function add and getAll
     // Add function led add all data types. Precent it with typeof parameter and conditionals
     // add function used to specify data types added up parameter typeof was assigned 
-// --- 3 --- Object.key to check typeof parameter
+// --- 3 --- Object Keys
+// validate type of data by implementing object keys method to check if parameter are equal to specific keys
+// --- 4 --- forEach
+    // adapt/conect always the function parameter and not the array name
+// --- 5 --- Filter function
+    // is a public function
+    // allows to find specific pokemon
+
+
 
 
 
