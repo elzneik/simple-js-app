@@ -79,7 +79,5 @@ body{
     margin: 4px 2px;
     transition-duration: 4s;
     cursor: pointer;
-    background-color: green;
-    color: white;
-    border: 2px solid blue;
+    
 }
