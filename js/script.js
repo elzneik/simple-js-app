@@ -13,13 +13,13 @@ let pokemonRepository = (function(){
         return pokemonList;
     }
     function addListItem(pokemon){
-        let unorderedList = document.querySelector("pokemon-list");
+        let /*unorderedList*/ pokemonList = document.querySelector(".pokemon-list");
         let listItem = document.createElement("li");
         let button = document.createElement("button");
         button.innerText = pokemon.name;
-        button.classList.add(".pokemon-button");
+        button.classList.add("pokemon-button");
         listItem.appendChild(button);
-        unorderedList.appendChild(listItem);
+        /*unorderedList*/ pokemonList.appendChild(listItem);
     }
     return {
         add,
