@@ -20,11 +20,15 @@ let pokemonRepository = (function(){
         button.classList.add("pokemon-button");
         listItem.appendChild(button);
         /*unorderedList*/ pokemonList.appendChild(listItem);
-        button.addEventListener("click", function showDetails(pokemon));
+        eventListener(button, pokemon);    
     }
     function showDetails(pokemon){
         console.log(pokemon);
     }
+    function eventListener (button, pokemon){
+        button.addEventListener("click", function(){
+            showDetails(pokemon));
+    }}
     return {
         add,
         getAll,
