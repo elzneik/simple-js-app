@@ -53,12 +53,13 @@ let pokemonRepository = (function(){
 
 // --- 4 --- forEach
 pokemonRepository.getAll().forEach(function(pokemon){
-    let DomManipulatingPractise = document.querySelectorAll(".pokemon-list");
-
-    let listItem = document.createElement("li");
+    let pokemonList  = document.querySelectorAll(".pokemon-list");
+    let pokemonListItem = document.createElement("li");
     let button = document.createElement ("button");
-    button.innerText = " ";
-    //listItem.appendChild(button);
+    button.innerText = pokemon.name;
+    button.classList.add("buttonstyle");
+    button.appendChild(pokemonList);
+    button.appendChild(pokemonListItem);    
 });
 
 
