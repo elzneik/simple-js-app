@@ -6,18 +6,12 @@ let pokemonRepository = (function(){
         {name: "Victreebel", height: 0.7, types: ["psychic", "fire", "ice", "fairy"]},
         {name: "Starmie", height: 1.1, types: ["dragon", "ghost", "bug", "fire", "ice"]}
     ];
-
     function add(pokemon){
         pokemonList.add(pokemon);
     }
     function getAll(){
         return pokemonList;
     }
-    return {
-        add,
-        getAll
-    }
-
     function addListItem(pokemon){
         let unorderedList = document.querySelector("pokemon-list");
         let listItem = document.createElement("li");
@@ -27,12 +21,14 @@ let pokemonRepository = (function(){
         listItem.appendChild(button);
         unorderedList.appendChild(listItem);
     }
+    return {
+        add,
+        getAll;
+        addListItem
+    }
 })();
 
-
-
 pokemonRepository.getAll().forEach(function(pokemon){
-
-
+    addListItem(pokemon);
 });
 
