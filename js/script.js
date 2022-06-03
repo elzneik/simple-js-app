@@ -3,12 +3,13 @@
 
 // note: The overview information is at the bottom
 
-/*
+
 // --- 5 --- Filter function
-const filterList = pokemonRepository;
-const result = filterList.filter(pokemonList.name);
-console.log(result);
-*/
+function filterItems(pokemonList, query){
+    return pokemonList.filter(function(el){
+        return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+    })
+}
 
 // --- 1 --- Create a function expression
 let pokemonRepository = (function(){
