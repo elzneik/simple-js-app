@@ -17,6 +17,7 @@ let pokemonRepository = (function(){
     function getAll(){
         return pokemonList;
     }
+
     function addListItem(pokemon){
         let /*unorderedList*/ pokemonList = document.querySelector(".pokemon-list");
         let listItem = document.createElement("li");
@@ -37,7 +38,7 @@ let pokemonRepository = (function(){
 
     function eventListener (button, pokemon){
         button.addEventListener("click", function(){
-            showDetails(pokemon)
+            showDetails(pokemon);
         });
     }
 
