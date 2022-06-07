@@ -21,10 +21,11 @@ let pokemonRepository = (function(){
             showDetails(pokemon);
         });
     }
+
+    //function showDetails(pokemon){
+    //    console.log(pokemon);
+    //}
     
-    function showDetails(pokemon){
-        console.log(pokemon);
-    }
     function eventListener (button, pokemon){
         button.addEventListener("click", function(){
             showDetails(pokemon)
