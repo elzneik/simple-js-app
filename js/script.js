@@ -1,6 +1,7 @@
 let pokemonRepository = (function(){
-    let pokemonList = [ ];
-    
+    let pokemonList = [];
+    let apiURL ="https://pokeapi.co/api/v2/pokemon/?limit=20";
+
     function add(pokemon){
         pokemonList.add(pokemon);
     }
@@ -15,8 +16,12 @@ let pokemonRepository = (function(){
         button.classList.add("pokemon-button");
         listItem.appendChild(button);
         /*unorderedList*/ pokemonList.appendChild(listItem);
-        eventListener(button, pokemon);    
+        eventListener(button, pokemon);
+        button.addEventListener("click", function(event){
+            showDetails(pokemon);
+        });
     }
+    
     function showDetails(pokemon){
         console.log(pokemon);
     }
@@ -25,14 +30,55 @@ let pokemonRepository = (function(){
             showDetails(pokemon)
         });
     }
+
+    function loadList(){
+        return fetch(apiURL).then(function(response){
+            return response.json();
+        }).then(function(json){
+            json.result.forEach(function(item){
+                let pokemon = {
+                    name: item.name,
+                    detailsURL: item.url
+                };
+                add(pokemon);
+            });
+        }).catch(function(e){
+            console.error(e);
+        });
+    }
+
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+          return response.json();
+        }).then(function (details) {
+          // Now we add the details to the item
+          item.imageUrl = details.sprites.front_default;
+          item.height = details.height;
+          item.types = details.types;
+        }).catch(function (e) {
+          console.error(e);
+        });
+      }
+
+      function showDetails(pokemon) {
+        loadDetails(pokemon).then(function () {
+          console.log(pokemon);
+        });
+      }
+
     return {
         add,
         getAll,
-        addListItem
+        addListItem,
+        loadList,
+        loadDetails
     }
 })();
 
-pokemonRepository.getAll().forEach(function(pokemon){
-    pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function(){
+    pokemonRepository.getAll().forEach(function(pokemon){
+        pokemonRepository.addListItem(pokemon);
+    });
 });
 
