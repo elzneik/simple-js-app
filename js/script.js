@@ -56,7 +56,7 @@ let pokemonRepository = (function(){
             });
         }).catch(function(e){
             console.error(e);
-        })
+        });
     }
 
     function loadDetails(item) {
@@ -73,9 +73,9 @@ let pokemonRepository = (function(){
         });
       }
 
-      function showDetails(pokemon) {
-        loadDetails(pokemon).then(function () {
-          console.log(pokemon);
+      function showDetails(item) {
+        pokemonRepository.loadDetails(item).then(function () {
+          console.log(item);
         });
       }
 
@@ -84,7 +84,8 @@ let pokemonRepository = (function(){
         getAll,
         addListItem,
         loadList,
-        loadDetails
+        loadDetails,
+        showDetails
     }
 })();
 
