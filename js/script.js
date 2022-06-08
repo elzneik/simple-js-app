@@ -159,12 +159,12 @@ function showModal() {
     // First Button, Second Headline, Third paragraph
     let closeButtonElement = document.createElement("button");
     closeButtonElement.classList.add("modal-close");
-    closeButtonElement.innterText = "Close";
+    closeButtonElement.innerText = "Close";
     closeButtonElement.addEventListener("click", hideModal);
     let titleElement = document.createElement("h1");
-    titleElement.innterText = title; // Do I need the quotes or not?!?! why not??
+    titleElement.innerText = title; // Do I need the quotes or not?!?! why not??
     let contentElement = document.createElement("p");
-    contentElement.innterText = text; // Do I need the quotes or not?!?! why not??
+    contentElement.innerText = text; // Do I need the quotes or not?!?! why not??
 
     // Now we execute that the button, h1 and p become a child of the modal tag
     modal.appendChild(closeButtonElement);
