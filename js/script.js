@@ -143,6 +143,7 @@ function showModal() {
     let closeButtonElement = document.createElement("button");
     closeButtonElement.classList.add("modal-close");
     closeButtonElement.innterText = "Close";
+    closeButtonElement.addEventListener("click", hideModal);
     let titleElement = document.createElement("h1");
     titleElement.innterText = "title"; // Do I need the quotes or not?!?! why not??
     let contentElement = document.createElement("p");
@@ -157,6 +158,18 @@ function showModal() {
 
     // now the modal will be shown after you click on the button show modal
     modalContainer.classList.add("is-visible"); // do I need this line at the end of the function yea or no?!!
+
+    // This function represents to hide the modal after clicking on x, space or using the key ESC
+    // Now the three options need to be wired up
+    function modalContainer() {
+        let hideModal = document.querySelector("#modal-container");
+        hideModal.classList.remove("is-visible");
+    }
+    
+// The Close button function is added to the showDetails using the hideModal variable
+// The Esc scenario is shown in the function below
+// 
+
 }
 
 // call & add event listener
@@ -164,4 +177,9 @@ function showModal() {
 document.querySelector("#show-modal").addEventListener("click", () => {
     showModal("Modal title", "This is the modal content!");
 });
+
+
+// Question 1: After I added the "modal title" and "this is the modal content" the code is broken
+// --> the modal is visible after the click on the button but not the title and text
+// --> also the close button is not visible
 
