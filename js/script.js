@@ -206,9 +206,11 @@ document.querySelector("#show-modal").addEventListener("click", () => {
 
 // Question 1: After I added the "modal title" and "this is the modal content"
 // the code is broken
-// --> the modal is visible after the click on the button but not the title and text
-// --> also the close button is not visible
+// --> the modal is visible after I click on the button show Modal but not 
+// the title and text
+// --> also the close button is not visible inside the modal
 
 // Question 2: After I added the closing functions the buttons do not show up
-// Why does that happen? Do I need to add all the function into the IIFE. If so, why? 
+// Why does that happen? Do I need to add all the function into the IIFE. If so, why?
+// Also the modal does not show up after I click on the show Modal button
 
