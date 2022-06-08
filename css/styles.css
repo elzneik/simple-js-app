@@ -133,3 +133,20 @@ body{
     max-width: 700px;
     text-align: left;
 }
+
+.modal-close{
+    float: right;
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    color: #777;
+    text-decoration: underline;
+}
+
+.modal h1{
+    margin-top: 0
+}
+
+.modal p{
+    margin-bottom: 0;
+}
