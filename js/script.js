@@ -130,7 +130,7 @@ function showModal() {
     // Select the id modal-container from HTML
     // Add a new class to the div tag
     let modalContainer = document.querySelector("#modal-container");
-    modalContainer.classList.add("is-visible"); // do I need this line at the end of the function yea or no?!!
+   
     // Clear all existing modal content
     modalContainer.innerHTML =" ";
     // Creating new tag with DOM methodology wrapped in a variable
@@ -155,6 +155,8 @@ function showModal() {
     // Now we have to say that the modal tag belongs to the modal-container div which is written in html
     modalContainer.appendChild(modal);
 
+    // now the modal will be shown after you click on the button show modal
+    modalContainer.classList.add("is-visible"); // do I need this line at the end of the function yea or no?!!
 }
 
 // call & add event listener
