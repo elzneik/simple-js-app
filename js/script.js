@@ -53,11 +53,11 @@ let pokemonRepository = (function(){
 // After the connection (via class name) is implemented new elements were created. 
 // A new class name was added to the <ol> list (Question: for what?)
     function addListItem(pokemon){
-        let pokemonList = document.querySelector(".pokemon-list");
+        let pokemonList = document.querySelector(".pokemon-list"); // this is a class in HTML
         let listItem = document.createElement("li");
         let button = document.createElement("button");
         button.innerText = pokemon.name;
-        button.classList.add("pokemon-button");
+        button.classList.add("pokemon-button"); // this is a class in CSS
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
         eventListener(button, pokemon);
@@ -108,6 +108,15 @@ let pokemonRepository = (function(){
         loadDetails,
         showDetails
     }
+
+    function showModal() {
+        let modalContainer = document.querySelector("#modal-container");
+        modalContainer.classList.add("is-visible");
+    }
+    // call & add event listener
+    document.querySelector("#show-modal").addEventListener("click" () => {showModal();
+    });
+
 })();
 
 // These are the programm calls.
