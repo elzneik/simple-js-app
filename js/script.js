@@ -1,4 +1,8 @@
 
+// === //
+// This section belongs to the __API and Promise__ implementation
+// === //
+
 // IIFE function; variable pokemonList holding the pokemon array.
 // This array will be filled through the function add.
 // The add function owns specific parameter which only accept the right data.
@@ -98,6 +102,14 @@ let pokemonRepository = (function(){
         });
       }
 
+      // Function to close the modal via the Esc keyboard key
+      window.addEventListener("keydown", (e) => {
+        let modalContainer = document.querySelector("modal-container");
+        if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
+            hideModal();
+        }
+    });
+
 // For each function given there is a necessary return which is information
 // Closing the IIFE
     return {
@@ -123,7 +135,12 @@ pokemonRepository.loadList().then(function(){
     });
 });
 
-// This section belongs to the Modal implementation
+
+
+// === //
+// This section belongs to the __Modal__ implementation
+// === //
+
 // The function in connection with CSS hide #modal-container rules show by click the modal
 // Enable a specific title and content that should be shown on the modal 
 function showModal() {
@@ -167,8 +184,16 @@ function showModal() {
     }
     
 // The Close button function is added to the showDetails using the hideModal variable
-// The Esc scenario is shown in the function below
-// 
+// The Esc scenario is shown in the function right abobe the return statement of the IIFE
+// Clicking outside the modal to close it belongs to the function below
+    modalContainer.addEventListener("click", (e) => {
+        // Since this is also triggered when clicking inside the modal
+        // we only want to close if the user clicks directly on the overlay
+        let target = e.target;
+        if(target === modalContainer) {
+            hideModal();
+        }
+    });
 
 }
 
