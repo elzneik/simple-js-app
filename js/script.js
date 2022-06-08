@@ -6,7 +6,7 @@ let pokemonRepository = (function(){
         if(
             typeof pokemon === "object" &&
             "name" in pokemon &&
-            "url" in pokemon
+            "detailsUrl" in pokemon
         ) {
         pokemonList.push(pokemon);
     } else {
