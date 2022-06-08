@@ -11,6 +11,7 @@ Table of Contents:
 8. Page: About
 9. Page: Contact
 10. File: JavaScript
+11. Global: Modal
 */
 
 /* 
@@ -23,10 +24,13 @@ Table of Contents:
     box-sizing: border-box;
 }
 
-body{
-      margin: 0;
+html, body{
+      font-family: Arial, sans-serif;
 }
 
+body{
+    margin: 0;
+}
 /* 
 =====================================
 1. Global: Colours
@@ -82,3 +86,9 @@ body{
     transition-duration: 4s;
     cursor: pointer;
 }
+
+/* 
+=====================================
+11. Modal
+=====================================
+*/
