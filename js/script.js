@@ -162,9 +162,9 @@ function showModal() {
     closeButtonElement.innterText = "Close";
     closeButtonElement.addEventListener("click", hideModal);
     let titleElement = document.createElement("h1");
-    titleElement.innterText = "title"; // Do I need the quotes or not?!?! why not??
+    titleElement.innterText = title; // Do I need the quotes or not?!?! why not??
     let contentElement = document.createElement("p");
-    contentElement.innterText = "text"; // Do I need the quotes or not?!?! why not??
+    contentElement.innterText = text; // Do I need the quotes or not?!?! why not??
 
     // Now we execute that the button, h1 and p become a child of the modal tag
     modal.appendChild(closeButtonElement);
@@ -204,7 +204,11 @@ document.querySelector("#show-modal").addEventListener("click", () => {
 });
 
 
-// Question 1: After I added the "modal title" and "this is the modal content" the code is broken
+// Question 1: After I added the "modal title" and "this is the modal content"
+// the code is broken
 // --> the modal is visible after the click on the button but not the title and text
 // --> also the close button is not visible
+
+// Question 2: After I added the closing functions the buttons do not show up
+// Why does that happen? Do I need to add all the function into the IIFE. If so, why? 
 
