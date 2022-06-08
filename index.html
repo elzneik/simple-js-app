@@ -26,8 +26,23 @@
   </header> <!-- // close header -->
 
   <body>
-<h1>Pokedex encyclopedia</h1>
+    <!-- Headline for the pokemon list -->
+    <h1>Pokedex encyclopedia</h1>
+
+    <!-- Unorderd List for DOM JS function addListItem -->
     <ul class="pokemon-list"></ul>
+
+    <!-- Modal -->
+    <button id="show-modal">Show modal</button>
+      <div id="modal-container">
+        <div class="modal">
+          <button class="modal-close">Close</button>
+          <h1>Modal title</h1>
+          <p>Modal text</p>
+        </div>
+      </div>
+      
+    <!-- JS Scripts -->
       <script src="js/promise-polyfill.js"></script>
       <script src="js/fetch.umd.js"></script>
       <script src="js/script.js"></script> 
