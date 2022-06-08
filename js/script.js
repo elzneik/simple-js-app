@@ -109,13 +109,7 @@ let pokemonRepository = (function(){
         showDetails
     }
 
-    function showModal() {
-        let modalContainer = document.querySelector("#modal-container");
-        modalContainer.classList.add("is-visible");
-    }
-    // call & add event listener
-    document.querySelector("#show-modal").addEventListener("click" () => {showModal();
-    });
+   
 
 })();
 
@@ -127,5 +121,14 @@ pokemonRepository.loadList().then(function(){
     pokemonRepository.getAll().forEach(function(pokemon){
         pokemonRepository.addListItem(pokemon);
     });
+});
+
+// This section belongs to the Modal implementation
+function showModal() {
+    let modalContainer = document.querySelector("#modal-container");
+    modalContainer.classList.add("is-visible");
+}
+// call & add event listener
+document.querySelector("#show-modal").addEventListener("click", () => {showModal();
 });
 
