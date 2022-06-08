@@ -124,11 +124,42 @@ pokemonRepository.loadList().then(function(){
 });
 
 // This section belongs to the Modal implementation
+// The function in connection with CSS hide #modal-container rules show by click the modal
+// Enable a specific title and content that should be shown on the modal 
 function showModal() {
+    // Select the id modal-container from HTML
+    // Add a new class to the div tag
     let modalContainer = document.querySelector("#modal-container");
-    modalContainer.classList.add("is-visible");
+    modalContainer.classList.add("is-visible"); // do I need this line at the end of the function yea or no?!!
+    // Clear all existing modal content
+    modalContainer.innerHTML =" ";
+    // Creating new tag with DOM methodology wrapped in a variable
+    // Afterwards add a class to the new tag
+    let modal = document.createElement("div")
+    modal.classList.add("modal");
+
+    // Add the new modal content
+    // First Button, Second Headline, Third paragraph
+    let closeButtonElement = document.createElement("button");
+    closeButtonElement.classList.add("modal-close");
+    closeButtonElement.innterText = "Close";
+    let titleElement = document.createElement("h1");
+    titleElement.innterText = "title"; // Do I need the quotes or not?!?! why not??
+    let contentElement = document.createElement("p");
+    contentElement.innterText = "text"; // Do I need the quotes or not?!?! why not??
+
+    // Now we execute that the button, h1 and p become a child of the modal tag
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+    // Now we have to say that the modal tag belongs to the modal-container div which is written in html
+    modalContainer.appendChild(modal);
+
 }
+
 // call & add event listener
-document.querySelector("#show-modal").addEventListener("click", () => {showModal();
+// add the contecnt to the showModal function that should be shown after the users click
+document.querySelector("#show-modal").addEventListener("click", () => {
+    showModal("Modal title", "This is the modal content!");
 });
 
