@@ -92,3 +92,24 @@ body{
 11. Modal
 =====================================
 */
+#modal-container{
+    position: fixed;            /* The position property specifies the type of positioning method used for an element. */
+    padding: 20px;
+    box-sizing: border-box;     /*The position property specifies the type of positioning method used for an element.*/
+                                /*The box-sizing property allows us to include the padding and border in an element's total width and height.*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+
+    /* third dimension, z shows it above other content*/
+    z-index: 999;
+
+    /* to allow scrolling if the screen is not high enough */
+    overflow: auto;
+
+    /*this is used to center the modal*/
+    display: grid;
+    text-align: center;
+}
