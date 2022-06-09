@@ -189,6 +189,9 @@ function showModal() {
         showDetails
     }
 
+   
+})();
+
     // These are the programm calls.
     // First loadList of pokemon from API
     // Then execute to get all pokemons as required
@@ -198,9 +201,6 @@ function showModal() {
             pokemonRepository.addListItem(pokemon);
     });
 });
-})();
-
-
 
 
 
