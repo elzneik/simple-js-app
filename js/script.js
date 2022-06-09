@@ -130,7 +130,7 @@ function showModal() {
     closeButtonElement.innerText = "Close";
     closeButtonElement.addEventListener("click", hideModal);
     let titleElement = document.createElement("h1");
-    titleElement.innerText = title; // Do I need the quotes or not?!?! why not??
+    titleElement.innerText = "title"; // Do I need the quotes or not?!?! why not??
     let contentElement = document.createElement("p");
     contentElement.innerText = text; // Do I need the quotes or not?!?! why not??
 
