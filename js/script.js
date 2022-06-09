@@ -17,13 +17,13 @@ let pokemonRepository = (function(){
 // The catch function shows the error in any case and a call
 // The function does use the promise chaining methodology
     function loadList(){
-        return fetch(apiUrl).then(function(response){
-            return response.json();
-        }).then(function(json){
-            json.results.forEach(function(item){
-                let pokemon = {
-                    name: item.name,
-                    detailsUrl: item.url
+        return fetch(apiUrl).then(function(response){ //---> the promise is the API link, the result is a response
+            return response.json(); // --> here we convert the response to a json
+        }).then(function(json){ //--> then we take the json
+            json.results.forEach(function(item){  // ---> create a loop forEach; json holds info for 20 pokemons; result is the key in the object; forEach of item
+                let pokemon = { // --> forEach of its item (result object key) create a pokemon variable
+                    name: item.name, // ---> create a pokemon object with two keys holding a property
+                    detailsUrl: item.url // ---> item belongs to the function parameter
                 };
                 add(pokemon);
                 console.log(pokemon);
@@ -90,7 +90,7 @@ let pokemonRepository = (function(){
 // The variable url is item.detailsURL ----> I do not know why item.detailsURL???
 // This code is tricky to understand for me!!! 
     function loadDetails(item) {
-        let url = item.detailsUrl;
+        let url = item.detailsUrl; // --> this is the bridge to the API link which holds the individual character of the pokemon
         return fetch(url).then(function (response) {
           return response.json();
         }).then(function (details) {
@@ -103,6 +103,14 @@ let pokemonRepository = (function(){
         });
       }
 
+    //First: connect image class with JS (do not foget for .class for #id)
+    let container = document.querySelector("#image-container");
+    //Second: create a new element (img or p or h1, whatever)
+    let pokemoniImage = document.createElement("img");
+    // Third: wire the src to the element img
+    pokemonImage.src = "link to img";
+    // tell the element img where it belongs too
+   container.appendChild(pokemonImage);
 
 
 
@@ -181,6 +189,7 @@ function showModal() {
 
 // For each function given there is a necessary return which is information
 // Closing the IIFE
+// return function = call functions to have access to it
     return {
         add,
         getAll,
@@ -189,8 +198,6 @@ function showModal() {
         loadDetails,
         showDetails
     }
-
-   
 })();
 
     // These are the programm calls.
