@@ -79,10 +79,10 @@ let pokemonRepository = (function(){
 // The function showDetails calls the functin loadDetails.
 // The function loadDetails holds the item informationi for each pokemon
 // The item information are provided in the JS API
-    function showDetails(pokemon) {
-        pokemonRepository.loadDetails(pokemon).then(function () {
+    function showDetails(item) {
+        pokemonRepository.loadDetails(item).then(function () {
             // console.log(item);
-            showModal(pokemon);
+            showModal(item);
         });
      }
 
