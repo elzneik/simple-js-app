@@ -102,38 +102,6 @@ let pokemonRepository = (function(){
         });
       }
 
-      // Function to close the modal via the Esc keyboard key
-      window.addEventListener("keydown", (e) => {
-        let modalContainer = document.querySelector("modal-container");
-        if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
-            hideModal();
-        }
-    });
-
-// For each function given there is a necessary return which is information
-// Closing the IIFE
-    return {
-        add,
-        getAll,
-        addListItem,
-        loadList,
-        loadDetails,
-        showDetails
-    }
-
-   
-
-})();
-
-// These are the programm calls.
-// First loadList of pokemon from API
-// Then execute to get all pokemons as required
-// And execute for Each pokemon an new list if required
-pokemonRepository.loadList().then(function(){
-    pokemonRepository.getAll().forEach(function(pokemon){
-        pokemonRepository.addListItem(pokemon);
-    });
-});
 
 
 
@@ -183,9 +151,9 @@ function showModal() {
         hideModal.classList.remove("is-visible");
     }
     
-// The Close button function is added to the showDetails using the hideModal variable
-// The Esc scenario is shown in the function right abobe the return statement of the IIFE
-// Clicking outside the modal to close it belongs to the function below
+    // The Close button function is added to the showDetails using the hideModal variable
+    // The Esc scenario is shown in the function right abobe the return statement of the IIFE
+    // Clicking outside the modal to close it belongs to the function below
     modalContainer.addEventListener("click", (e) => {
         // Since this is also triggered when clicking inside the modal
         // we only want to close if the user clicks directly on the overlay
@@ -193,15 +161,51 @@ function showModal() {
         if(target === modalContainer) {
             hideModal();
         }
+        });
+    }
+
+    // call & add event listener
+    // add the contecnt to the showModal function that should be shown after the users click
+    document.querySelector("#show-modal").addEventListener("click", () => {
+    showModal("Modal title", "This is the modal content!");
     });
 
-}
+      // Function to close the modal via the Esc keyboard key
+      window.addEventListener("keydown", (e) => {
+        let modalContainer = document.querySelector("modal-container");
+        if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
+            hideModal();
+        }
+    });
 
-// call & add event listener
-// add the contecnt to the showModal function that should be shown after the users click
-document.querySelector("#show-modal").addEventListener("click", () => {
-    showModal("Modal title", "This is the modal content!");
+// For each function given there is a necessary return which is information
+// Closing the IIFE
+    return {
+        add,
+        getAll,
+        addListItem,
+        loadList,
+        loadDetails,
+        showDetails
+    }
+
+   
+
+})();
+
+// These are the programm calls.
+// First loadList of pokemon from API
+// Then execute to get all pokemons as required
+// And execute for Each pokemon an new list if required
+pokemonRepository.loadList().then(function(){
+    pokemonRepository.getAll().forEach(function(pokemon){
+        pokemonRepository.addListItem(pokemon);
+    });
 });
+
+
+
+
 
 
 // Question 1: After I added the "modal title" and "this is the modal content"
