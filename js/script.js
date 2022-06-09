@@ -188,17 +188,19 @@ function showModal() {
         loadDetails,
         showDetails
     }
-})();
 
-// These are the programm calls.
-// First loadList of pokemon from API
-// Then execute to get all pokemons as required
-// And execute for Each pokemon an new list if required
-pokemonRepository.loadList().then(function(){
-    pokemonRepository.getAll().forEach(function(pokemon){
-        pokemonRepository.addListItem(pokemon);
+    // These are the programm calls.
+    // First loadList of pokemon from API
+    // Then execute to get all pokemons as required
+    // And execute for Each pokemon an new list if required
+    pokemonRepository.loadList().then(function(){
+        pokemonRepository.getAll().forEach(function(pokemon){
+            pokemonRepository.addListItem(pokemon);
     });
 });
+})();
+
+
 
 
 
