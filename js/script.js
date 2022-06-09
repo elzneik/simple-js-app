@@ -81,7 +81,8 @@ let pokemonRepository = (function(){
 // The item information are provided in the JS API
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function () {
-            console.log(item);
+            // console.log(item);
+            showModal();
         });
      }
 
