@@ -120,7 +120,7 @@ function showModal() {
     modalContainer.innerHTML =" ";
     // Creating new tag with DOM methodology wrapped in a variable
     // Afterwards add a class to the new tag
-    let modal = document.createElement("div")
+    let modal = document.createElement("div");
     modal.classList.add("modal");
 
     // Add the new modal content
@@ -146,9 +146,9 @@ function showModal() {
 
     // This function represents to hide the modal after clicking on x, space or using the key ESC
     // Now the three options need to be wired up
-    function modalContainer() {
-        let hideModal = document.querySelector("#modal-container");
-        hideModal.classList.remove("is-visible");
+    function hideModal() {
+        let modalContainer = document.querySelector("#modal-container");
+        modalContainer.classList.remove("is-visible");
     }
     
     // The Close button function is added to the showDetails using the hideModal variable
@@ -170,8 +170,8 @@ function showModal() {
     showModal("Modal title", "This is the modal content!");
     });
 
-      // Function to close the modal via the Esc keyboard key
-      window.addEventListener("keydown", (e) => {
+    // Function to close the modal via the Esc keyboard key
+    window.addEventListener("keydown", (e) => {
         let modalContainer = document.querySelector("modal-container");
         if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
             hideModal();
@@ -188,9 +188,6 @@ function showModal() {
         loadDetails,
         showDetails
     }
-
-   
-
 })();
 
 // These are the programm calls.
