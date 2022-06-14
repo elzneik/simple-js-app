@@ -103,14 +103,7 @@ let pokemonRepository = (function(){
         });
       }
 
-    //First: connect image class with JS (do not foget for .class for #id)
-    let container = document.querySelector("#image-container");
-    //Second: create a new element (img or p or h1, whatever)
-    let pokemoniImage = document.createElement("img");
-    // Third: wire the src to the element img
-    pokemonImage.src = "link to img";
-    // tell the element img where it belongs too
-   container.appendChild(pokemonImage);
+    
 
 
 
@@ -158,6 +151,16 @@ function showModal(pokemon) {
     function hideModal() {
         let modalContainer = document.querySelector("#modal-container");
         modalContainer.classList.remove("is-visible");
+
+    // image code
+    //First: connect image class with JS (do not foget for .class for #id)
+    let container = document.querySelector("#image-container");
+    //Second: create a new element (img or p or h1, whatever)
+    let pokemoniImage = document.createElement("img");
+    // Third: wire the src to the element img
+    pokemonImage.src = "link to img";
+    // tell the element img where it belongs too
+    modal.appendChild(pokemonImage);
     }
     
     // The Close button function is added to the showDetails using the hideModal variable
