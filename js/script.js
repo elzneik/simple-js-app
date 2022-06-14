@@ -120,7 +120,7 @@ let pokemonRepository = (function(){
 
 // The function in connection with CSS hide #modal-container rules show by click the modal
 // Enable a specific title and content that should be shown on the modal 
-function showModal() {
+function showModal(pokemon) {
     // Select the id modal-container from HTML
     // Add a new class to the div tag
     let modalContainer = document.querySelector("#modal-container");
