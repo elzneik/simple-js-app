@@ -142,7 +142,7 @@ function showModal(pokemon) {
     //Second: create a new element (img or p or h1, whatever)
     let pokemoniImage = document.createElement("img");
     // Third: wire the src to the element img
-    pokemonImage.src = pokemon.imageUrl;
+    pokemonImage.src = "link to image";
     // tell the element img where it belongs too
     modal.appendChild(pokemonImage);
 
@@ -161,8 +161,6 @@ function showModal(pokemon) {
     function hideModal() {
         let modalContainer = document.querySelector("#modal-container");
         modalContainer.classList.remove("is-visible");
-
-    
     }
     
     // The Close button function is added to the showDetails using the hideModal variable
