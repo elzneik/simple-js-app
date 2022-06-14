@@ -139,9 +139,9 @@ function showModal(pokemon) {
     closeButtonElement.innerText = "Close";
     closeButtonElement.addEventListener("click", hideModal);
     let titleElement = document.createElement("h1");
-    titleElement.innerText = "title"; // Do I need the quotes or not?!?! why not??
+    titleElement.innerText = pokemon.name; // Do I need the quotes or not?!?! why not??
     let contentElement = document.createElement("p");
-    contentElement.innerText = "text"; // Do I need the quotes or not?!?! why not??
+    contentElement.innerText = pokemon.height; // Do I need the quotes or not?!?! why not??
 
     // Now we execute that the button, h1 and p become a child of the modal tag
     modal.appendChild(closeButtonElement);
