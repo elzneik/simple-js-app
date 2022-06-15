@@ -140,9 +140,9 @@ function showModal(pokemon) {
     //First: connect image class with JS (do not foget for .class for #id)
     let container = document.querySelector("#image-container");
     //Second: create a new element (img or p or h1, whatever)
-    let pokemoniImage = document.createElement("img");
+    let pokemonImage = document.createElement("img");
     // Third: wire the src to the element img
-    pokemonImage.src = "link to image";
+    pokemonImage.src = pokemon.imageUrl;
     // tell the element img where it belongs too
     modal.appendChild(pokemonImage);
 
