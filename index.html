@@ -15,7 +15,7 @@
 <!-- body -->
 <body>
 <!-- bootstrap navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<a class="navbar-brand" href="#">
       <img src="img/1337497_game_go_play_pikachu_pokemon_icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
       Pokemonia
@@ -41,6 +41,16 @@
   </div>
 </nav>
 
+
+<div class="container page-container">
+
+ <!-- Headline for the pokemon list -->
+ <h1>Pokedex encyclopedia</h1>
+
+ <!-- Unorderd List for DOM JS function addListItem -->
+ <ul class="pokemon-list"></ul>
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -64,13 +74,9 @@
 
 
 
+</div> <!-- close page container -->
 
-
-    <!-- Headline for the pokemon list -->
-    <h1>Pokedex encyclopedia</h1>
-
-    <!-- Unorderd List for DOM JS function addListItem -->
-    <ul class="pokemon-list"></ul>
+   
       <!-- jQuery, popper, Bootstrap - link from the repl by CF newer version as on bootstrap -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
