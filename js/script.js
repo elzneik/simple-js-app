@@ -63,6 +63,7 @@ let pokemonRepository = (function(){
         button.innerText = pokemon.name;
         button.classList.add("pokemon-button"); // this is a class in CSS
         listItem.appendChild(button);
+        listItem.classList.add("group-list-item"); // this is the bootstrap class for ul/li
         pokemonList.appendChild(listItem);
         eventListener(button, pokemon);
     }
