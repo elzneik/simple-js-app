@@ -31,6 +31,11 @@ html, body{
 body{
     margin: 0;
 }
+
+
+.page-container {
+    margin-top: 100px;
+}
 /* 
 =====================================
 1. Global: Colours
