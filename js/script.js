@@ -113,6 +113,43 @@ let pokemonRepository = (function(){
 
 // The function in connection with CSS hide #modal-container rules show by click the modal
 // Enable a specific title and content that should be shown on the modal 
+
+// This is the modal coded with Bootstrap
+// show the modal content
+function showModal (item) {
+    let modalBody = $(".modal-body");
+    let modalHeader = $(".modal-header");
+    let modalFooter = $("modal-footer");
+
+    // clear existing content of the modal
+    modalTitle.empty();
+    modalBody.empty();
+
+    // create a new element for name in modal content
+    let nameElement = $("<h1>" + item.name + "</h1>");
+    // create a new element for an image
+    let imageElementFront = $("<img class="modal-img" style="width:50%">");
+    imageElementFront.attr("src", item.imageUrlFront);
+    let imageElementBack = $("<img class="modal-img" style="width:50%">");
+    imageElementBack.attr("src", item.imageUrlFront);
+
+    // creating an element for the height, weight, type and abilities in modal content
+    let heightElement = $("<p>" + "height : " + item.height + "</p>");
+    let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
+    let typeElement = $("<p>" + "type : " + item.type + "</p>");
+    let abilitiesElement = $("<p>" + "abilities : " + item.abilities + "</p>");
+
+    modalTitle.append(nameElement);
+    modalBody.append(imageElementFront);
+    modalBody.append(imageElementBack);
+    modalBody.append(heightElement);
+    modalBody.append(weightElement);
+    modalBody.append(typeElement);
+    modalBody.append(abilitiesElement);
+
+}
+
+/* This is the modal coded with JavaScript
 function showModal(pokemon) {
     // Select the id modal-container from HTML
     // Add a new class to the div tag
@@ -175,6 +212,9 @@ function showModal(pokemon) {
         }
         });
     }
+
+    */
+
 
     // call & add event listener
     // add the contecnt to the showModal function that should be shown after the users click
