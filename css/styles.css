@@ -52,25 +52,7 @@ body{
 =====================================
 4. Global: Primary Navigation
 =====================================
-*/
 
-.page-header{ 
-    display: flex;
-    width: 100%;
-    background-color: #e8be02e5
-}
-.main-nav{
-    flex: 0 1 200px;
-}
-.main-nav__list--item:last-child{
-    text-align: right;
-    flex-grow: 1;
-}
-.main-nav__list{
-    list-style-type: none;
-}
-
-/* 
 =====================================
 10. file: JavaScript
 =====================================
