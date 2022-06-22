@@ -48,15 +48,18 @@ body{
     color:#484a51;
   }
 
-/* 
+
 =====================================
 4. Global: Primary Navigation
 =====================================
+.mr-2 {
+    margin-right: ($spacer * .5) !important;
+}
 
 =====================================
 10. file: JavaScript
 =====================================
-*/
+
 .pokemon-list{
     list-style: none;
 }
