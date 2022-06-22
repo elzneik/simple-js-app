@@ -14,52 +14,34 @@ Table of Contents:
 11. Global: Modal
 */
 
-/* 
-=====================================
-0. GLOBAL SPACINGS AND LAYOUT
-=====================================
-*/
 
+/*=== 0. Global: Spacing and layouts ===*/
 *{
     box-sizing: border-box;
 }
-
 html, body{
       font-family: Arial, sans-serif;
 }
-
 body{
     margin: 0;
 }
-
-
 .page-container {
     margin-top: 100px;
 }
-/* 
-=====================================
-1. Global: Colours
-=====================================
-*/
 
+/*=== 1. Global: Colours ===*/
   body{
     /* color */
     background-color: #b4c4fa;
     color:#484a51;
   }
 
-
-=====================================
-4. Global: Primary Navigation
-=====================================
+/*=== 4. Global: Primary Navigation ===*/
 .mr-4 {
     margin-right: ($spacer * 1.5) !important;
 }
 
-=====================================
-10. file: JavaScript
-=====================================
-
+/*=== 10. Global: javaScript ===*/
 .pokemon-list{
     list-style: none;
 }
@@ -77,11 +59,7 @@ body{
     cursor: pointer;
 }
 
-/* 
-=====================================
-11. Modal
-=====================================
-*/
+/*=== 11. Global: Modal ===*/
 #modal-container{
     position: fixed;            /* The position property specifies the type of positioning method used for an element. */
     padding: 20px;
@@ -114,20 +92,11 @@ body{
 
 .modal{
     margin: auto;
-    /*
-    Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
-    Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
-    Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
-    */
     display: inline-block;
     box-sizing: border-box;
     background: #fff;
     padding: 15px;
     width: 100%;
-    /*
-    The max-width property defines the maximum width of an element.
-    If the content is larger than the maximum width, it will automatically change the height of the element.
-    */
     max-width: 700px;
     text-align: left;
 }
