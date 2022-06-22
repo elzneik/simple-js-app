@@ -52,8 +52,8 @@ body{
 =====================================
 4. Global: Primary Navigation
 =====================================
-.mr-2 {
-    margin-right: ($spacer * .5) !important;
+.mr-4 {
+    margin-right: ($spacer * 1.5) !important;
 }
 
 =====================================
