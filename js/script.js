@@ -30,7 +30,7 @@ let pokemonRepository = (function(){
         return pokemonList;
     }
 
-    // a function which uses DOM methodology
+    // DOM methodology
     function addListItem(pokemon){
         let pokemonList = document.querySelector(".pokemon-list"); 
         let listItem = document.createElement("li");
@@ -43,7 +43,7 @@ let pokemonRepository = (function(){
         eventListener(button, pokemon);
     }
 
-    // This function calls the showDetails function; User "clicks" and wants to see info
+    // This function calls the showDetails if a user activates it
     function eventListener (button, pokemon){
         button.addEventListener("click", function(){
             showDetails(pokemon);
