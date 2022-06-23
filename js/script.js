@@ -46,6 +46,9 @@ let pokemonRepository = (function(){
             "mx-auto",
             "group-list-item"
         );
+        // Add attributes to button
+        button.setAttribute("data-target", "#exampleModal");
+        button.setAttribute("data-toggle", "modal");
         // Define affiliation of the elements
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
