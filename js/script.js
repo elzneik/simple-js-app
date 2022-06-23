@@ -88,8 +88,8 @@ let pokemonRepository = (function(){
 
     // This is the modal coded with Bootstrap
     function showModal (pokemon) {
-        let modalBody = document.querySelector("modal-body");
-        let modalTitle = document.querySelector("#pokemonModalTitle");
+        let modalBody = document.querySelector("pokemon-modal-body");
+        let modalTitle = document.querySelector("pokemon-modal-title");
 
         modalBody.innerHTML = " ";
         modalTitle.innerHTML = " ";
