@@ -35,6 +35,7 @@ let pokemonRepository = (function(){
         let pokemonList = document.querySelector(".pokemon-list"); 
         let listItem = document.createElement("li");
         let button = document.createElement("button");
+        // Classes content for button
         button.innerText = pokemon.name;
         button.classList.add(
             "btn",
@@ -43,11 +44,10 @@ let pokemonRepository = (function(){
             "gap-2",
             "col-6",
             "mx-auto",
+            "group-list-item"
         );
+        // Define affiliation of the elements
         listItem.appendChild(button);
-
-        
-        listItem.classList.add("group-list-item");
         pokemonList.appendChild(listItem);
         eventListener(button, pokemon);
     }
