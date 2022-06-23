@@ -89,31 +89,24 @@ let pokemonRepository = (function(){
         });
      }
 
-  
-
     // This is the modal coded with Bootstrap
     function showModal (pokemon) {
         let modalBody = $("#pokemon-modal-body");
         let modalTitle = $("#pokemon-modal-title");
-
         // clear existing content of the modal
         modalTitle.empty();
         modalBody.empty();
-
-        // create a new element for name in modal content
+        // create new elements for the pokemon details
         let nameElement = $("<h1>" + pokemon.name + "</h1>");
-        // create a new element for an image
         let pokeImageFront = $("<img class="modal-img" style="width:50%">");
         pokeImageFront.attr("src", pokemon.imageUrlFront);
         let pokeImageBack = $("<img class="modal-img" style="width:50%">");
         pokeImageBack.attr("src", pokemon.imageUrlBack);
-
-        // creating an element for the height, weight, type and abilities in modal content
         let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
         let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
         let typeElement = $("<p>" + "type : " + pokemon.types + "</p>");
         let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "</p>");
-
+        // Affiliate the elements to the modal sections
         modalTitle.append(nameElement);
         modalBody.append(pokeImageFront);
         modalBody.append(pokeImageBack);
