@@ -33,7 +33,9 @@ let pokemonRepository = (function(){
         item.imageUrlFront = details.sprites.front_default;
         item.imageUrlBack = details.sprites.back_default;
         item.height = details.height;
+        item.weight = details.weight;
         item.types = details.types;
+        item.abilities = details.abilities;
         })
         .catch(function (e) {
         console.error(e);
@@ -115,12 +117,10 @@ let pokemonRepository = (function(){
         modalTitle.append(nameElement);
         modalBody.append(pokeImageFront);
         modalBody.append(pokeImageBack);
-        
         modalBody.append(heightElement);
         modalBody.append(weightElement);
         modalBody.append(typeElement);
         modalBody.append(abilitiesElement);
-
     }
 
     return {
