@@ -36,8 +36,17 @@ let pokemonRepository = (function(){
         let listItem = document.createElement("li");
         let button = document.createElement("button");
         button.innerText = pokemon.name;
-        button.classList.add("pokemon-button");
+        button.classList.add(
+            "btn",
+            "btn-outline-secondary",
+            "d-grid",
+            "gap-2",
+            "col-6",
+            "mx-auto",
+        );
         listItem.appendChild(button);
+
+        
         listItem.classList.add("group-list-item");
         pokemonList.appendChild(listItem);
         eventListener(button, pokemon);
@@ -75,9 +84,18 @@ let pokemonRepository = (function(){
       }
 
     // This is the modal coded with Bootstrap
-    function showModal (item) {
+    function showModal (pokemon) {
+        let modalBody = document.querySelector("modal-body");
+        let modalTitle = document.querySelector("#pokemonModalTitle");
+
+        modalBody.innerHTML = " ";
+        modalTitle.innerHTML = " ";
+
+        let pokemonName = document.createElement("h1");
+        pokemonName.innerText = pokemon.Name;
+
         let modalBody = $(".modal-body");
-        let modalHeader = $(".modal-header");
+        let modalTitle = $(".modal-title");
         let modalFooter = $("modal-footer");
 
         // clear existing content of the modal
