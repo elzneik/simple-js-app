@@ -22,6 +22,24 @@ let pokemonRepository = (function(){
         });
     }
 
+    // The function loads the pokemon details based on the API link
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+        return response.json();
+        })
+        .then(function (details) {
+        // Now we add the details to the item
+        item.imageUrlFront = details.sprites.front_default;
+        item.imageUrlBack = details.sprites.back_default;
+        item.height = details.height;
+        item.types = details.types;
+        })
+        .catch(function (e) {
+        console.error(e);
+        });
+    }
+
     function add(pokemon){
         pokemonList.push(pokemon);
     }
@@ -69,22 +87,7 @@ let pokemonRepository = (function(){
         });
      }
 
-    // The function loads the pokemon details based on the API link
-    function loadDetails(item) {
-        let url = item.detailsUrl;
-        return fetch(url).then(function (response) {
-          return response.json();
-        })
-        .then(function (details) {
-          // Now we add the details to the item
-          item.imageUrl = details.sprites.front_default;
-          item.height = details.height;
-          item.types = details.types;
-        })
-        .catch(function (e) {
-          console.error(e);
-        });
-      }
+  
 
     // This is the modal coded with Bootstrap
     function showModal (pokemon) {
@@ -98,20 +101,21 @@ let pokemonRepository = (function(){
         // create a new element for name in modal content
         let nameElement = $("<h1>" + pokemon.name + "</h1>");
         // create a new element for an image
-        let imageElementFront = $("<img class="modal-img" style="width:50%">");
-        imageElementFront.attr("src", pokemon.imageUrlFront);
-        let imageElementBack = $("<img class="modal-img" style="width:50%">");
-        imageElementBack.attr("src", pokemon.imageUrlFront);
+        let pokeImageFront = $("<img class="modal-img" style="width:50%">");
+        pokeImageFront.attr("src", pokemon.imageUrlFront);
+        let pokeImageBack = $("<img class="modal-img" style="width:50%">");
+        pokeImageBack.attr("src", pokemon.imageUrlBack);
 
         // creating an element for the height, weight, type and abilities in modal content
         let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
         let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
-        let typeElement = $("<p>" + "type : " + pokemon.type + "</p>");
+        let typeElement = $("<p>" + "type : " + pokemon.types + "</p>");
         let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "</p>");
 
         modalTitle.append(nameElement);
-        modalBody.append(imageElementFront);
-        modalBody.append(imageElementBack);
+        modalBody.append(pokeImageFront);
+        modalBody.append(pokeImageBack);
+        
         modalBody.append(heightElement);
         modalBody.append(weightElement);
         modalBody.append(typeElement);
