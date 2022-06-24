@@ -21,16 +21,13 @@ let pokemonRepository = (function(){
             console.error(e);
         });
     }
-
     function add(pokemon){
         pokemonList.push(pokemon);
     }
-
     function getAll(){
         return pokemonList;
     }
-
-    // DOM methodology
+    // DOM methodology; javascript code
     function addListItem(pokemon){
         let pokemonList = document.querySelector(".pokemon-list"); 
         let listItem = document.createElement("li");
@@ -54,15 +51,18 @@ let pokemonRepository = (function(){
         pokemonList.appendChild(listItem);
         eventListener(button, pokemon);
     }
-
-    // This function calls the showDetails if a user activates it
+    // User activates button, button functionality is to show pokemon details
     function eventListener (button, pokemon){
         button.addEventListener("click", function(){
             showDetails(pokemon);
         });
     }
-
-    // The function loads the pokemon details based on the API link
+    function showDetails(item) {
+        pokemonRepository.loadDetails(item).then(function () {
+            showModal(item);
+        });
+     }
+    // API pokemon details; use a promise
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -81,14 +81,7 @@ let pokemonRepository = (function(){
         console.error(e);
         });
     }
-
-    function showDetails(item) {
-        pokemonRepository.loadDetails(item).then(function () {
-            showModal(item);
-        });
-     }
-
-    // This is the modal coded with Bootstrap
+    // Modal written in jquery
     function showModal (pokemon) {
         let modalBody = $("#pokemon-modal-body");
         let modalTitle = $("#pokemon-modal-title");
@@ -114,7 +107,6 @@ let pokemonRepository = (function(){
         modalBody.append(typeElement);
         modalBody.append(abilitiesElement);
     }
-
     return {
         add,
         getAll,
@@ -123,11 +115,9 @@ let pokemonRepository = (function(){
         loadDetails,
         showDetails
     }
-})();   // // close function pokemonRepository
-
-    
+})();  
     pokemonRepository.loadList().then(function(){
         pokemonRepository.getAll().forEach(function(pokemon){
             pokemonRepository.addListItem(pokemon);
     });
-});     // // close calls on function pokemonRepository
+});   
