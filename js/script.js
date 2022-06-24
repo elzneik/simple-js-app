@@ -47,7 +47,7 @@ let pokemonRepository = (function(){
             "group-list-item"
         );
         // Add attributes to button
-        button.setAttribute("data-target", "#exampleModal");
+        button.setAttribute("data-target", "#showModal");
         button.setAttribute("data-toggle", "modal");
         // Define affiliation of the elements
         listItem.appendChild(button);
