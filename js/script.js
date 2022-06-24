@@ -43,7 +43,7 @@ let pokemonRepository = (function(){
             "mx-auto",
         );
         // Add attributes to button
-        button.setAttribute("data-target", "#exampleModal");
+        button.setAttribute("data-target", "group-list-item");
         button.setAttribute("data-toggle", "modal");
         // Define affiliation of the elements
         listItem.appendChild(button);
