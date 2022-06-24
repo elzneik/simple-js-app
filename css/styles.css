@@ -5,15 +5,7 @@ Table of Contents:
 2. Global: Text
 3. Global: Interactive Elements
 4. Global: Primary Navigation
-5. Global: Footer
-6. Page: Home
-7. Page: Work
-8. Page: About
-9. Page: Contact
-10. File: JavaScript
-11. Global: Modal
 */
-
 
 /*=== 0. Global: Spacing and layouts ===*/
 *{
@@ -28,19 +20,17 @@ body{
 .page-container {
     margin-top: 65px;
 }
-
 /*=== 1. Global: Colours ===*/
   body{
     /* color */
     background-color: #b4c4fa;
     color:#484a51;
   }
-
 /*=== 4. Global: Primary Navigation ===*/
 .mr-4 {
     margin-right: ($spacer * 1.5) !important;
 }
-
 /*=== 3. Global: Interactive Elements ===*/
 .pokemon-list{
     list-style: none;
+}
