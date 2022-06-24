@@ -97,9 +97,9 @@ let pokemonRepository = (function(){
         modalBody.empty();
         // create new elements for the pokemon details
         let nameElement = $("<h1>" + pokemon.name + "</h1>");
-        let pokeImageFront = $("<img class='modal-img' style='width:50%'>");
+        let pokeImageFront = $("<img class="modal-img" style="width:50%">");
         pokeImageFront.attr("src", pokemon.imageUrlFront);
-        let pokeImageBack = $("<img class='modal-img' style='width:50%'>");
+        let pokeImageBack = $("<img class="modal-img" style="width:50%">");
         pokeImageBack.attr("src", pokemon.imageUrlBack);
         let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
         let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
