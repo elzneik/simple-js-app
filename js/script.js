@@ -41,7 +41,6 @@ let pokemonRepository = (function(){
             "gap-2",
             "col-6",
             "mx-auto",
-            "group-list-item"
         );
         // Add attributes to button
         button.setAttribute("data-target", "#exampleModal");
