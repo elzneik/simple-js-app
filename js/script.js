@@ -82,6 +82,15 @@ let pokemonRepository = (function(){
     }
     // Modal written in jquery
     function showModal (pokemon) {
+        // Choose the element`s attribute class name in a div group; clear the content; add a new element; fill it with a class
+        let modalContainer = document.querySelector(".container");
+        modalContainer.innterHTML = " ";
+        let modal = createElement("div");
+        modal.classlist.add(
+            "pokemon-modal-body",
+            "pokemon-modal-title"
+            );
+        
         let modalBody = $(".pokemon-modal-body");
         let modalTitle = $(".pokemon-modal-title");
         // clear existing content of the modal
@@ -105,6 +114,11 @@ let pokemonRepository = (function(){
         modalBody.append(weightElement);
         modalBody.append(typeElement);
         modalBody.append(abilitiesElement);
+
+        modal.appendChild(modalBody);
+        modal.appendChild(modalTitle);
+        modalConatainer.appendChild(modal);
+
     }
     return {
         add,
