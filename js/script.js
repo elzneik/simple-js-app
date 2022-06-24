@@ -82,8 +82,8 @@ let pokemonRepository = (function(){
     }
     // Modal written in jquery
     function showModal (pokemon) {
-        let modalBody = $("#pokemon-modal-body");
-        let modalTitle = $("#pokemon-modal-title");
+        let modalBody = $(".pokemon-modal-body");
+        let modalTitle = $(".pokemon-modal-title");
         // clear existing content of the modal
         modalTitle.empty();
         modalBody.empty();
