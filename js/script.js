@@ -22,26 +22,6 @@ let pokemonRepository = (function(){
         });
     }
 
-    // The function loads the pokemon details based on the API link
-    function loadDetails(item) {
-        let url = item.detailsUrl;
-        return fetch(url).then(function (response) {
-        return response.json();
-        })
-        .then(function (details) {
-        // Now we add the details to the item
-        item.imageUrlFront = details.sprites.front_default;
-        item.imageUrlBack = details.sprites.back_default;
-        item.height = details.height;
-        item.weight = details.weight;
-        item.types = details.types;
-        item.abilities = details.abilities;
-        })
-        .catch(function (e) {
-        console.error(e);
-        });
-    }
-
     function add(pokemon){
         pokemonList.push(pokemon);
     }
@@ -79,6 +59,26 @@ let pokemonRepository = (function(){
     function eventListener (button, pokemon){
         button.addEventListener("click", function(){
             showDetails(pokemon);
+        });
+    }
+
+    // The function loads the pokemon details based on the API link
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+        return response.json();
+        })
+        .then(function (details) {
+        // Now we add the details to the item
+        item.imageUrlFront = details.sprites.front_default;
+        item.imageUrlBack = details.sprites.back_default;
+        item.height = details.height;
+        item.weight = details.weight;
+        item.types = details.types;
+        item.abilities = details.abilities;
+        })
+        .catch(function (e) {
+        console.error(e);
         });
     }
 
