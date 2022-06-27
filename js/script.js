@@ -43,7 +43,7 @@ let pokemonRepository = (function(){
             "mx-auto",
         );
         // Add attributes to button
-        button.setAttribute("data-target", "group-list-item");
+        button.setAttribute("data-target", "#exampleModal");
         button.setAttribute("data-toggle", "modal");
         // Define affiliation of the elements
         listItem.appendChild(button);
@@ -82,21 +82,12 @@ let pokemonRepository = (function(){
     }
     // Modal written in jquery
     function showModal (pokemon) {
-        // Choose the element`s attribute class name in a div group; clear the content; add a new element; fill it with a class
-        let modalContainer = document.querySelector(".container");
-        modalContainer.innterHTML = " ";
-        let modal = createElement("div");
-        modal.classlist.add(
-            "pokemon-modal-body",
-            "pokemon-modal-title"
-            );
+        let modalBody = $(".modal-body");
+        let modalTitle = $(".modal-title");
         
-        let modalBody = $(".pokemon-modal-body");
-        let modalTitle = $(".pokemon-modal-title");
-        // clear existing content of the modal
         modalTitle.empty();
         modalBody.empty();
-        // create new elements for the pokemon details
+        
         let nameElement = $("<h1>" + pokemon.name + "</h1>");
         let pokeImageFront = $("<img class='modal-img' style='width:50%'>");
         pokeImageFront.attr("src", pokemon.imageUrlFront);
@@ -106,7 +97,7 @@ let pokemonRepository = (function(){
         let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
         let typeElement = $("<p>" + "type : " + pokemon.types + "</p>");
         let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "</p>");
-        // Affiliate the elements to the modal sections
+        
         modalTitle.append(nameElement);
         modalBody.append(pokeImageFront);
         modalBody.append(pokeImageBack);
@@ -114,11 +105,6 @@ let pokemonRepository = (function(){
         modalBody.append(weightElement);
         modalBody.append(typeElement);
         modalBody.append(abilitiesElement);
-
-        modal.appendChild(modalBody);
-        modal.appendChild(modalTitle);
-        modalConatainer.appendChild(modal);
-
     }
     return {
         add,
