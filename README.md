@@ -29,7 +29,7 @@ During this project I learned:
 Contributions, issues and feature requests are welcome!
 
 ## Show your support
-Give a :+1: :thumbsup: or a :star: if you like this project!
+Give a :thumbsup: or a :star: if you like this project!
 
 ### Autor
 [GitHub](https://github.com/elzneik)
