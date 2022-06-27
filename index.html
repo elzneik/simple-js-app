@@ -66,18 +66,46 @@
           </div>
       </nav>
     </header>
+
     <main>
       <div class="container page-container"> 
         <h1> Pokedex encyclopedia </h1>
         <!-- Pokemon List -->
         <ul class="list-group pokemon-list">
-          <li class="group-list-item"></li>
         </ul>
         <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-secondary">prev</button>
           <button type="button" class="btn btn-secondary">next</button>
         </div>
-      </div>     
+      </div>
+      
+      <!-- Modal -->
+      <div 
+        class="modal fade" 
+        id="exampleModal"
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalLabel" 
+        aria-hidden="true"
+        >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="pokemon-modal-title">Modal title</h5>
+              <button
+                type="button" 
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="pokemon-modal-body">
+              <!-- Pokemon details go here -->
+            </div>
+          </div> <!-- close Modal-content (header, body, footer) --> 
+        </div> <!-- close modal-dialog --> 
+      </div> <!-- close Modal -->
     </main>
  
     <!-- Bootstrap  -->
