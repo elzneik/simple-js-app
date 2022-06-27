@@ -28,7 +28,7 @@ body{
   }
 /*=== 4. Global: Primary Navigation ===*/
 .mr-4 {
-    margin-right: ($spacer * 1.5) !important;
+    margin-right: (spacer * 1.5) !important;
 }
 /*=== 3. Global: Interactive Elements ===*/
 .pokemon-list{
