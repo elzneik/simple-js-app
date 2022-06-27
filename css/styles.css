@@ -8,9 +8,7 @@ Table of Contents:
 */
 
 /*=== 0. Global: Spacing and layouts ===*/
-*{
-    box-sizing: border-box;
-}
+
 html, body{
       font-family: Arial, sans-serif;
 }
