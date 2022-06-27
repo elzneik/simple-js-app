@@ -17,5 +17,19 @@ This is a pokemon app that uses HTML, CSS and JavaScript. The app loads data fro
 - Fetch polyfill
 - Promise polyfill
 
+## Lessons learned
+During this project I learned:
+- how to use the fetch function to load data from an external API
+- how to implement the IIFE methodology to isolate variable declarations
+- how to use the DOM methodology and its code language JS and jQuery
+- how a user clicks through a small app and how to integrate an app listener
+- how to use bootstrap
+
+## Contributing
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+Give a :+1: :thumbsup: or a :star: if you like this project!
+
 ### Autor
 [GitHub](https://github.com/elzneik)
